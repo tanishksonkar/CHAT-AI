@@ -25,17 +25,83 @@ function App() {
 
   return (
     <>
-    <h1 className="bg-red-300">Tanishk AI</h1>
-    <textarea 
+     <nav className="navbar">
+        <h3  className ="navbar__logo" >Orion Gemini</h3>
+        <button className="navbar__button" id="themeToggler"><i className='bx bx-sun'></i></button>
+    </nav>
+     <header>
+     <div className="header__title">
+            <h1>Hello, There!</h1>
+            <h2>How can I help you today?</h2>
+        </div>
+        <div className="suggests">
+            <div className="suggests__item">
+                <p className="suggests__item-text">
+                    Give tips on helping kids finish their homework on time
+                </p>
+                <div className="suggests__item-icon">
+                    <i className='bx bx-stopwatch'></i>
+                </div>
+            </div>
+            <div className="suggests__item">
+                <p className="suggests__item-text">
+                    Help me write an out-of-office email
+                </p>
+                <div className="suggests__item-icon">
+                    <i className='bx bx-edit-alt'></i>
+                </div>
+            </div>
+            <div className="suggests__item">
+                <p className="suggests__item-text">
+                    Give me phrases to learn a new language
+                </p>
+                <div className="suggests__item-icon">
+                    <i className='bx bx-compass'></i>
+                </div>
+            </div>
+            <div className="suggests__item">
+                <p className="suggests__item-text">
+                    Show me how to build something by hand
+                </p>
+                <div className="suggests__item-icon">
+                    <i className='bx bx-wrench'></i>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <section className="prompt">
+        <form action="#" className="prompt__form" noValidate>
+            <div className="prompt__input-wrapper">
+                
+                <button className="prompt__form-button" id="sendButton">
+                    <i className='bx bx-send'></i>
+                </button>
+                <button className="prompt__form-button" id="deleteButton">
+                    <i className='bx bx-trash'></i>
+                </button>
+            </div>
+        </form>
+        <p className="prompt__disclaim">
+            Gemini may display inaccurate info, including about people, so double-check its responses.
+        </p>
+    </section>
+    
+    <main><textarea 
     className="border rounded w-full"
     value={question}
     onChange={(e)=> setquestion(e.target.value)}
-    cols="20"
-    rows="10"
+    cols="5"
+    rows="1"
     placeholder="ask me anything"
-    ></textarea>
+    ></textarea></main>
+    
     <button onClick={GenrateAnswer}>Genrate Answer</button>
-    <p>{Answer}</p>
+    <pre>{Answer}</pre>
+    <footer>
+        <p>© 2024 Orion AI. Built with ❤️ for innovation. <a href="#">Learn More</a></p>
+    </footer>
+    
 
     </>
   )
